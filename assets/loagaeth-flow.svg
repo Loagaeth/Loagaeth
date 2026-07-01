@@ -1,0 +1,83 @@
+<svg width="1100" height="360" viewBox="0 0 1100 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Loagaeth">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#050816"/>
+      <stop offset="0.55" stop-color="#0b1026"/>
+      <stop offset="1" stop-color="#102238"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" x2="1">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="0.5" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+    <radialGradient id="core" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#e0f2fe" stop-opacity=".95"/>
+      <stop offset=".32" stop-color="#22d3ee" stop-opacity=".46"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .title { font: 800 66px ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; fill: #e5f4ff; letter-spacing: 1px; }
+      .sub { font: 500 19px ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; fill: #94a9c7; }
+      .wire { stroke: url(#line); stroke-width: 2.6; stroke-linecap: round; opacity: .68; stroke-dasharray: 10 16; animation: dash 9s linear infinite; }
+      .thin { stroke: #7dd3fc; stroke-width: 1; opacity: .14; }
+      .orbit { fill: none; stroke: #93c5fd; stroke-width: 1.4; opacity: .17; transform-origin: 760px 180px; animation: spin 22s linear infinite; }
+      .orbit.alt { animation-duration: 32s; animation-direction: reverse; }
+      .dot { filter: url(#glow); animation: pulse 3.4s ease-in-out infinite; transform-origin: center; }
+      .float { animation: float 5.5s ease-in-out infinite; }
+      .scan { animation: scan 6s ease-in-out infinite; }
+      @keyframes dash { to { stroke-dashoffset: -180; } }
+      @keyframes pulse { 0%,100% { opacity: .68; transform: scale(1); } 50% { opacity: 1; transform: scale(1.18); } }
+      @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      @keyframes scan { 0%,100% { opacity: .06; transform: translateX(-80px); } 50% { opacity: .22; transform: translateX(90px); } }
+    </style>
+  </defs>
+
+  <rect width="1100" height="360" rx="28" fill="url(#bg)"/>
+  <g opacity=".18">
+    <circle cx="985" cy="48" r="155" fill="#22d3ee"/>
+    <circle cx="120" cy="318" r="160" fill="#7c3aed"/>
+  </g>
+
+  <g>
+    <path class="thin" d="M120 70H1010M120 118H1010M120 166H1010M120 214H1010M120 262H1010"/>
+    <path class="thin" d="M210 46V314M330 46V314M450 46V314M570 46V314M690 46V314M810 46V314M930 46V314"/>
+    <rect class="scan" x="420" y="48" width="120" height="264" fill="#67e8f9" opacity=".1"/>
+  </g>
+
+  <path class="wire" d="M120 242 C260 92, 442 86, 568 182 S816 312, 1012 116"/>
+  <path class="wire" d="M90 112 C264 306, 456 304, 618 174 S840 42, 1030 256" opacity=".42"/>
+  <path class="wire" d="M250 286 C402 168, 544 142, 690 214 S880 250, 1038 160" opacity=".34"/>
+
+  <g class="float">
+    <text class="title" x="72" y="114">Loagaeth</text>
+    <text class="sub" x="77" y="150">interest-driven builds</text>
+  </g>
+
+  <circle cx="760" cy="180" r="104" fill="url(#core)" opacity=".76"/>
+  <g opacity=".78">
+    <ellipse class="orbit" cx="760" cy="180" rx="250" ry="84"/>
+    <ellipse class="orbit alt" cx="760" cy="180" rx="190" ry="138" transform="rotate(-19 760 180)"/>
+    <ellipse class="orbit" cx="760" cy="180" rx="120" ry="190" transform="rotate(38 760 180)"/>
+  </g>
+
+  <circle class="dot" cx="250" cy="242" r="8" fill="#a78bfa"/>
+  <circle class="dot" cx="424" cy="104" r="7" fill="#67e8f9" style="animation-delay:.4s"/>
+  <circle class="dot" cx="616" cy="177" r="9" fill="#86efac" style="animation-delay:.8s"/>
+  <circle class="dot" cx="816" cy="236" r="8" fill="#fbbf24" style="animation-delay:1.2s"/>
+  <circle class="dot" cx="982" cy="122" r="7" fill="#60a5fa" style="animation-delay:1.6s"/>
+
+  <g opacity=".72">
+    <circle cx="998" cy="62" r="3" fill="#e0f2fe"><animate attributeName="opacity" values=".2;1;.2" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="1018" cy="286" r="4" fill="#a7f3d0"><animate attributeName="opacity" values="1;.25;1" dur="4.2s" repeatCount="indefinite"/></circle>
+    <circle cx="520" cy="78" r="3" fill="#c4b5fd"><animate attributeName="opacity" values=".25;1;.25" dur="3.6s" repeatCount="indefinite"/></circle>
+    <circle cx="148" cy="226" r="3" fill="#bae6fd"><animate attributeName="opacity" values="1;.2;1" dur="4.8s" repeatCount="indefinite"/></circle>
+  </g>
+</svg>
